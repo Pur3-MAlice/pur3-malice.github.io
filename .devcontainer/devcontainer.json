@@ -1,1 +1,23 @@
+{
+  "name": "Wedding Website Dev Env",
+  "dockerFile": "Dockerfile",
 
+  "settings": {
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay"
+  },
+
+  "extensions": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "ritwickdey.liveserver",
+    "bradlc.vscode-tailwindcss",
+    "sasa.vscode-scss-formatter"
+  ],
+
+  "postCreateCommand": "npm install",
+
+  "forwardPorts": [5500],
+
+  "remoteUser": "vscode"
+}
