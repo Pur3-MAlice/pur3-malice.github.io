@@ -1,1 +1,20 @@
+{
+  "name": "wedding-site",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "live-server --watch=src",
+    "build:css": "tailwindcss -i ./tailwind/input.css -o ./public/css/tailwind.css --minify",
+    "build:scss": "sass src/scss/style.scss public/css/style.css --no-source-map",
+    "build": "npm run build:scss && npm run build:css",
+    "optimize-images": "npx imagemin src/images/* --out-dir=public/images"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.0",
+    "autoprefixer": "^10.4.0",
+    "imagemin": "^8.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.0"
+  }
+}
 
