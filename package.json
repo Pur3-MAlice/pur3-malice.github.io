@@ -2,13 +2,10 @@
   "name": "wedding-site",
   "version": "1.0.0",
   "scripts": {
-    "dev": "concurrently \"npm run watch:scss\" \"npm run watch:css\" \"live-server public\"",
-    "watch:scss": "sass src/scss/style.scss public/css/style.css --watch",
-    "watch:css": "tailwindcss -i src/tailwind/input.css -o public/css/tailwind.css --watch",
-    "build:scss": "sass src/scss/style.scss public/css/style.css --no-source-map --style=compressed",
-    "build:css": "tailwindcss -i src/tailwind/input.css -o public/css/tailwind.css --minify",
-    "build": "npm run build:scss && npm run build:css",
-    "optimize-images": "imagemin src/images/* --out-dir=public/images"
+    "dev": "live-server --watch=src",
+    "build:scss": "sass src/scss/style.scss style.css --no-source-map --style=compressed",
+    "build:css": "tailwindcss -i src/tailwind/input.css -o tailwind.css --minify",
+    "build": "npm run build:scss && npm run build:css"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.0",
