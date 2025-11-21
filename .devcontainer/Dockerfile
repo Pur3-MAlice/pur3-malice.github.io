@@ -1,7 +1,4 @@
 FROM mcr.microsoft.com/devcontainers/javascript-node:1-22-bullseye
 
-RUN apt-get update && apt-get install -y \
-  ruby-full \
-  && gem install sass
-
+# Install live-server globally
 RUN npm install -g live-server
