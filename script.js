@@ -14,6 +14,8 @@ tl.fromTo(".repeatText",
     { attr: { startOffset: "100%" }, duration: dur, ease: "linear" }  // move to off-screen right
 );
 
+
+
 const btn = document.getElementById("pauseBtn");
 let paused = false;
 

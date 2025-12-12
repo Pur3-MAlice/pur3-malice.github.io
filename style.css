@@ -6,7 +6,7 @@ body{
     color: #39492e;
     padding: 0;
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
@@ -14,7 +14,7 @@ body{
 div.main-body {
     padding: 0;
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,6 +41,8 @@ svg {
     z-index: 2;
     color: white;
 }
+
+/* LINE */
 
 /* navbar  */
 
