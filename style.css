@@ -1,4 +1,41 @@
 body{
     background-color: #818866;
     color: #39492e;
+    padding: 0;
+    margin: 0;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.main-body {
+    /* padding: 0;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; */
+    border: 0.5px red solid;
+}
+
+.travelling-svg {
+  width: 100vw; 
+  height: auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+svg {
+    width: 100vw;
+    height: auto;
+    display: block;
+    font-family: "Roboto", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    z-index: 2;
+    color: white;
+}
+
