@@ -6,11 +6,11 @@ const text = Array.from({ length: repeatCount }, () => base).join(sep);
 
 document.getElementById("tp").textContent = text;
 
-var dur = 20.0;
+var dur = 350.0;
 let tl = gsap.timeline({ repeat: -1 });
 
 tl.fromTo(".repeatText",
-    { attr: { startOffset: "-100%" } },  // start off-screen left
+    { attr: { startOffset: "-1000%" } },  // start off-screen left
     { attr: { startOffset: "100%" }, duration: dur, ease: "linear" }  // move to off-screen right
 );
 
@@ -26,4 +26,23 @@ btn.addEventListener("click", () => {
         btn.textContent = "Pause";
     }
     paused = !paused;
+});
+
+
+
+///nav bar
+const navEl = document.querySelector('.nav');
+const hamburgerEl = document.querySelector('.hamburger');
+const navItemEls = document.querySelectorAll('.nav__item');
+
+hamburgerEl.addEventListener('click', () => {
+  navEl.classList.toggle('nav--open');
+  hamburgerEl.classList.toggle('hamburger--open');
+});
+
+navItemEls.forEach(navItemEl => {
+  navItemEl.addEventListener('click', () => {
+    navEl.classList.remove('nav--open');
+    hamburgerEl.classList.remove('hamburger--open');
+  });
 });
