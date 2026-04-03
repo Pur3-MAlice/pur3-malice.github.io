@@ -1,26 +1,50 @@
+
+/* .roboto-<uniquifier> {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+
+.playfair-display-<uniquifier> {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+:root {
+  --pale-oak: #E4CCAA;
+  --sand: #B4A85C;
+  --palm-leaf: #818865;
+  --olive-leaf: #38492D;
+  --golden-apricot: #E29A40;
+  --reddish-brown: #A44936;
+  --powder-blush: #E8A29A;
+  --vintage-grape: #523A55;
+  --sky-blue-light: #86C5D6;
+  --jet-black: #0A2D33;
+}
+
 * {
     box-sizing: border-box;
 }
 body{
-    background-color: #818866;
-    color: #39492e;
+    background-color: var(--palm-leaf);
+    color: var(--olive-leaf);
     padding: 0;
     margin: 0;
     overflow-x: hidden;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 div.main-body {
     padding: 0;
     margin: 0;
-    /* overflow-x: hidden; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-    /* border: 0.5px red solid; */
 }
 
 div.travelling-svg {
@@ -30,17 +54,54 @@ div.travelling-svg {
     object-fit: cover;
 }
 
+section.main-body-intro{
+  display:flex;
+  width:100vw;
+}
+
+div.heading-intro {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  row-gap: 20px;
+  width: 100%;
+  height: 40vh;
+}
+.heading-intro h1 {
+  font-family: "Playfair Display", serif;
+  order: 2;
+  font-size: 60px;
+  font-weight: 700;
+  color: var(--olive-leaf);
+}
+
+.heading-intro p {
+  font-family: "Playfair Display", serif;
+  order: 1;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+  color: var(--olive-leaf);
+}
+
+.heading-intro div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 5px;
+  order: 3;
+}
 
 svg {
     width: 100vw;
-    height: auto;
-    display: block;
-    /* font-family: "Roboto", sans-serif;
-    font-size: 40px;
-    font-weight: 700; */
-    z-index: 2;
-    color: white;
-}
+    height: 175px;
+    /* display: block; */
+    /* z-index: 2; */
+    color: var(--jet-black);
+  }
+  
 
 /* LINE */
 
@@ -102,11 +163,13 @@ button {
   font-size: 20px;
   color: #39492e;
   font-weight: 500;
+  font-family: "Playfair Display", serif;
   letter-spacing: -0.5px;
 }
 
 .nav {
   transition: all 0.3s ease-in-out;
+  font-family: "Roboto", sans-serif;
 }
 
 .nav__list {
@@ -205,6 +268,4 @@ button {
   .hamburger {
     display: block;
   }
-}
-
 }
