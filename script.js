@@ -1,5 +1,5 @@
-const base = " We're Getting Married ";
-const sep = "\u00A0\u00A0\u00A0♥\u00A0\u00A0\u00A0";
+const base = " we're gettin' married ";
+const sep = "\u00A0\u00A0\u00A0 ❤ \u00A0\u00A0\u00A0";
 const repeatCount = 100;
 
 const text = Array.from({ length: repeatCount }, () => base).join(sep);

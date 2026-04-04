@@ -1,4 +1,3 @@
-
 /* .roboto-<uniquifier> {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
@@ -16,47 +15,44 @@
   font-style: normal;
 } */
 
+/* Universal styles */
+
 :root {
-  --pale-oak: #E4CCAA;
-  --sand: #B4A85C;
+  --pale-oak: #e4ccaa;
+  --sand: #b4a85c;
   --palm-leaf: #818865;
-  --olive-leaf: #38492D;
-  --golden-apricot: #E29A40;
-  --reddish-brown: #A44936;
-  --powder-blush: #E8A29A;
-  --vintage-grape: #523A55;
-  --sky-blue-light: #86C5D6;
-  --jet-black: #0A2D33;
+  --olive-leaf: #38492d;
+  --golden-apricot: #e29a40;
+  --reddish-brown: #a44936;
+  --powder-blush: #e8a29a;
+  --vintage-grape: #523a55;
+  --sky-blue-light: #86c5d6;
+  --jet-black: #0a2d33;
 }
 
 * {
-    box-sizing: border-box;
-}
-body{
-    background-color: var(--palm-leaf);
-    color: var(--olive-leaf);
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
+  box-sizing: border-box;
 }
 
+body {
+  background-color: var(--palm-leaf);
+  color: var(--olive-leaf);
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Main body styles */
 
 div.main-body {
-    padding: 0;
-    margin: 0;
-    height: 100vh;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
 }
 
-div.travelling-svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-}
-
-section.main-body-intro{
-  display:flex;
-  width:100vw;
+section.main-body-intro {
+  display: flex;
+  width: 100vw;
 }
 
 div.heading-intro {
@@ -67,23 +63,23 @@ div.heading-intro {
   row-gap: 20px;
   width: 100%;
   height: 40vh;
-}
-.heading-intro h1 {
   font-family: "Playfair Display", serif;
-  order: 2;
-  font-size: 60px;
-  font-weight: 700;
   color: var(--olive-leaf);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.heading-intro h1 {
+  font-size: 120px;
+  font-weight: 700;
+  order: 2;
+  cursor: default;
 }
 
 .heading-intro p {
-  font-family: "Playfair Display", serif;
-  order: 1;
-  font-size: 20px;
-  font-weight: 400;
   margin: 0;
   text-align: center;
-  color: var(--olive-leaf);
+  order: 1;
 }
 
 .heading-intro div {
@@ -94,16 +90,22 @@ div.heading-intro {
   order: 3;
 }
 
-svg {
-    width: 100vw;
-    height: 175px;
-    /* display: block; */
-    /* z-index: 2; */
-    color: var(--jet-black);
-  }
-  
 
-/* LINE */
+/* Moving text svg */
+div.travelling-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+svg {
+  width: 100vw;
+  height: 175px;
+  display: block; 
+   z-index: 2; 
+  }
+
 
 /* navbar  */
 
@@ -142,7 +144,7 @@ button {
   min-height: 60px;
   max-width: 1200px;
   padding: 0 30px;
-  margin: 0 auto;  
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -178,7 +180,7 @@ button {
 }
 
 .nav__item {
-    color: #39492e;
+  color: #39492e;
 }
 
 .nav__link {
@@ -199,13 +201,13 @@ button {
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s;
-  color:#39492e;
+  color: #39492e;
   /* color: #39492e;
   color: #818866; */
 }
 
 .btn:hover {
-  background-color:  rgb(28, 128, 228);
+  background-color: rgb(28, 128, 228);
 }
 
 .hamburger {
