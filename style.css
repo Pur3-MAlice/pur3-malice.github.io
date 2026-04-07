@@ -1,21 +1,7 @@
-/* .roboto-<uniquifier> {
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-}
-
-
-.playfair-display-<uniquifier> {
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-} */
-
 /* Universal styles */
+* {
+  box-sizing: border-box;
+}
 
 :root {
   --pale-oak: #e4ccaa;
@@ -30,10 +16,6 @@
   --jet-black: #0a2d33;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   background-color: var(--palm-leaf);
   color: var(--olive-leaf);
@@ -42,75 +24,11 @@ body {
   overflow-x: hidden;
 }
 
-/* Main body styles */
+/* Header styles*/
 
-div.main-body {
-  padding: 0;
-  margin: 0;
-  height: 100vh;
-}
-
-section.main-body-intro {
-  display: flex;
-  width: 100vw;
-}
-
-div.heading-intro {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  row-gap: 20px;
-  width: 100%;
-  height: 40vh;
-  font-family: "Playfair Display", serif;
-  color: var(--olive-leaf);
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.heading-intro h1 {
-  font-size: 120px;
-  font-weight: 700;
-  order: 2;
-  cursor: default;
-}
-
-.heading-intro p {
-  margin: 0;
-  text-align: center;
-  order: 1;
-}
-
-.heading-intro div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 5px;
-  order: 3;
-}
-
-
-/* Moving text svg */
-div.travelling-svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-svg {
-  width: 100vw;
-  height: 175px;
-  display: block; 
-   z-index: 2; 
-  }
-
-
-/* navbar  */
-
-ul {
+ul.nav-list {
   list-style: none;
+  font-size: 18px;
 }
 
 a {
@@ -125,10 +43,9 @@ button {
   color: inherit;
 }
 
-/* NORMAL STYLES */
 .header {
   width: 100%;
-  border-bottom: #39492e 1px solid;
+  border-bottom: var(--olive-leaf) 1px solid;
 }
 
 .icon {
@@ -140,10 +57,9 @@ button {
   background-color: transparent;
 }
 
-.bottom-bar__content {
-  min-height: 60px;
-  max-width: 1200px;
-  padding: 0 30px;
+.bottom-bar-content {
+  min-height: 75px;
+  padding: 0 60px 0 75px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -157,12 +73,12 @@ button {
   align-items: center;
 }
 
-.logo__img {
+.logo-img {
   height: 30px;
 }
 
-.logo__text {
-  font-size: 20px;
+.logo-text {
+  font-size: 24px;
   color: #39492e;
   font-weight: 500;
   font-family: "Playfair Display", serif;
@@ -174,22 +90,22 @@ button {
   font-family: "Roboto", sans-serif;
 }
 
-.nav__list {
+.nav-list {
   display: flex;
   column-gap: 40px;
 }
 
-.nav__item {
+.nav-item {
   color: #39492e;
 }
 
-.nav__link {
+.nav-link {
   color: #39492e;
   transition: all 0.2s;
 }
 
-.nav__link:hover,
-.nav__link:focus {
+.nav-link:hover,
+.nav-link:focus {
   color: #81291c;
 }
 
@@ -197,13 +113,10 @@ button {
   padding: 8px 20px;
   border: #39492e 1px solid;
   text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 18px;
   cursor: pointer;
   transition: all 0.2s;
   color: #39492e;
-  /* color: #39492e;
-  color: #818866; */
 }
 
 .btn:hover {
@@ -222,6 +135,69 @@ button {
   margin: 5px 0;
   opacity: 0.8;
   transition: all 0.3s ease-in-out;
+}
+
+/* Main body styles */
+
+div.main-body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+}
+
+section.main-body-intro {
+  display: flex;
+  width: 100vw;
+}
+
+div.banner-intro {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  row-gap: 20px;
+  width: 100%;
+  height: 40vh;
+  font-family: "Playfair Display", serif;
+  color: var(--olive-leaf);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.banner-intro h1 {
+  font-size: 120px;
+  font-weight: 700;
+  order: 2;
+  cursor: default;
+}
+
+.banner-intro p {
+  margin: 0;
+  text-align: center;
+  order: 1;
+}
+
+.banner-intro div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 5px;
+  order: 3;
+}
+
+/* Moving text svg */
+div.travelling-svg-01 {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  position: relative;
+}
+
+button#pauseBtn {
+  position: absolute;
+  top: 70%;
+  left: 5px;
 }
 
 /* For JS */
@@ -252,13 +228,13 @@ button {
     padding: 10px 0 25px;
   }
 
-  .nav__list {
+  .nav-list {
     flex-direction: column;
     align-items: center;
     row-gap: 20px;
   }
 
-  .nav__link {
+  .nav-link {
     font-size: 14px;
   }
 

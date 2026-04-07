@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,27 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="tailwind.css" />
     <link rel="stylesheet" href="style.css" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    />
     <title>Watkins Wedding</title>
   </head>
+
   <body>
     <header class="header">
       <div class="bottom-bar">
-        <div class="bottom-bar__content">
-          <span class="logo__text">Watkins Wedding '27</span>
+        <div class="bottom-bar-content">
+          <span class="logo-text">Watkins Wedding '27</span>
           <nav class="nav">
-            <ul class="nav__list">
-              <li class="nav__item">
-                <a class="nav__link" href="#">Travel & Stay</a>
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Travel & Stay</a>
               </li>
-              <li class="nav__item">
-                <a class="nav__link" href="#">Things to Do</a>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Things to Do</a>
               </li>
-              <li class="nav__item">
-                <a class="nav__link" href="#">Registry</a>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Registry</a>
               </li>
-              <li class="nav__item">
+              <li class="nav-item">
                 <a class="btn" href="#">RSVP</a>
               </li>
             </ul>
@@ -42,59 +50,61 @@
 
     <div class="main-body">
       <section class="main-body-intro">
-        <div class="heading-intro">
+        <div class="banner-intro">
           <h1>A & J</h1>
-          <p>We're Gettin' <br /> Married</p>
+          <p>WE'RE GETTIN'<br />MARRIED</p>
           <div>
             <p>18.09.2027</p>
             <p>Manchester</p>
           </div>
         </div>
       </section>
-      <section>
-       <div class="travelling-svg svg-text">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 800 120"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <defs>
-            <path
-              id="path"
-              d="M0 60 C300 -20 500 140 800 60"
-              stroke="#fff"
-              fill="none"
-            />
-          </defs>
-          <text fill="#38492d" font-family="Playfair Display, sans-serif" font-weight="500" font-size="12px">
-            <textPath class="repeatText" id="tp" xlink:href="#path"></textPath>
-          </text>
-        </svg>
-      </div>
-      <button id="pauseBtn">Pause</button>
+
+      <section class="travelling-section">
+        <div class="travelling-svg-01 svg-text">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 800 120"
+            preserveAspectRatio="xMidYMid slice"
+          >
+            <defs>
+              <path
+                id="path"
+                d="M0 60 C300 -20 500 140 800 60"
+                stroke="#fff"
+                fill="none"
+              />
+            </defs>
+            <text
+              fill="#38492d"
+              font-family="Playfair Display, sans-serif"
+              font-weight="500"
+              font-size="12px"
+            >
+              <textPath
+                class="repeatText"
+                id="tp"
+                xlink:href="#path"
+              ></textPath>
+            </text>
+          </svg>
+          <button id="pauseBtn">
+            <i class="fa fa-pause" aria-hidden="true"></i>
+          </button>
+        </div>
+      </section>
+
+      <section class="our-story-section">
+        <div>
+          <h2>OUR STORY</h2>
+          <p>We met and it was nice</p>
+        </div>
+      </section>
     </div>
-          <div>
-        <svg
-        width="100%"
-        height="100"
-        viewBox="0 0 1000 200"
-        style="overflow: visible"
-      >
-        <g id="wrapper">
-          <path
-            d="M0,100 C250,50 750,150 1000,100"
-            fill="none"
-            stroke="green"
-            stroke-width="2"
-            stroke-linecap="round"
-          />
-        </g>
-      </svg>
-      </div>
-    </section>
+
+    <footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+      <script src="script.js"></script>
+    </footer>
   </body>
-  <footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="script.js"></script>
-  </footer>
 </html>

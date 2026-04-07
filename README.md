@@ -71,12 +71,14 @@ pur3-malice.github.io/
 ### Steps
 
 1. **Clone the repository:**
+
    ```bash
    git clone <repository-url>
    cd pur3-malice.github.io
    ```
 
 2. **Install dependencies:**
+
    ```bash
    npm install
    ```
@@ -103,11 +105,13 @@ All build commands are defined in `package.json`:
 ### Production Builds
 
 - **`npm run build:scss`** - Compile SCSS to CSS (minified, no source maps)
+
   ```bash
   npm run build:scss
   ```
 
 - **`npm run build:css`** - Compile Tailwind CSS (minified)
+
   ```bash
   npm run build:css
   ```
@@ -165,12 +169,15 @@ The site is designed to be mobile-first with responsive features:
 ## ⚙️ Configuration Files
 
 ### `tailwind.config.js`
+
 Tailwind CSS configuration for custom theme and plugins.
 
 ### `postcss.config.js`
+
 PostCSS configuration with autoprefixer for vendor prefixes.
 
 ### `package.json`
+
 - **Dev Dependencies:**
   - `tailwindcss@^3.4.0`
   - `sass@^1.69.0`
@@ -216,12 +223,12 @@ The `CNAME` file contains: `watkinswedding.co.uk`
 
 Current navigation items and their purposes:
 
-| Item | Purpose |
-|------|---------|
+| Item              | Purpose                                       |
+| ----------------- | --------------------------------------------- |
 | **Travel & Stay** | Information about accommodation in Manchester |
-| **Things to Do** | Attractions and activities in the area |
-| **Registry** | Wedding registry information |
-| **RSVP** | Button to submit attendance confirmation |
+| **Things to Do**  | Attractions and activities in the area        |
+| **Registry**      | Wedding registry information                  |
+| **RSVP**          | Button to submit attendance confirmation      |
 
 ---
 

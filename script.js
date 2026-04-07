@@ -22,10 +22,10 @@ let paused = false;
 btn.addEventListener("click", () => {
     if (!paused) {
         tl.pause();
-        btn.textContent = "Resume";
+        btn.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
     } else {
         tl.resume();
-        btn.textContent = "Pause";
+        btn.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
     }
     paused = !paused;
 });
@@ -35,7 +35,7 @@ btn.addEventListener("click", () => {
 ///nav bar
 const navEl = document.querySelector('.nav');
 const hamburgerEl = document.querySelector('.hamburger');
-const navItemEls = document.querySelectorAll('.nav__item');
+const navItemEls = document.querySelectorAll('.nav-item');
 
 hamburgerEl.addEventListener('click', () => {
   navEl.classList.toggle('nav--open');
