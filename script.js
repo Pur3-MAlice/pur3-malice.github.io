@@ -1,10 +1,10 @@
 const base = " we're gettin' married ";
-const sep = "\u00A0\u00A0\u00A0 ❤ \u00A0\u00A0\u00A0";
+const sep = '\u00A0\u00A0\u00A0 <tspan class="heart">❤</tspan> \u00A0\u00A0\u00A0';
 const repeatCount = 100;
 
 const text = Array.from({ length: repeatCount }, () => base).join(sep);
 
-document.getElementById("tp").textContent = text;
+document.getElementById("tp").innerHTML = text;
 
 var dur = 350.0;
 let tl = gsap.timeline({ repeat: -1 });

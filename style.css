@@ -9,8 +9,8 @@
   --palm-leaf: #818865;
   --olive-leaf: #38492d;
   --golden-apricot: #e29a40;
-  --reddish-brown: #a44936;
-  --powder-blush: #e8a29a;
+  --reddish-brown: #a43a36;
+  --powder-blush: #eca49c;
   --vintage-grape: #523a55;
   --sky-blue-light: #86c5d6;
   --jet-black: #0a2d33;
@@ -28,7 +28,7 @@ body {
 
 ul.nav-list {
   list-style: none;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 a {
@@ -106,21 +106,24 @@ button {
 
 .nav-link:hover,
 .nav-link:focus {
-  color: #81291c;
+  color: var(--sky-blue-light);
 }
 
 .btn {
   padding: 8px 20px;
-  border: #39492e 1px solid;
+  border: var(--olive-leaf) 2px solid;
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
   transition: all 0.2s;
   color: #39492e;
 }
 
-.btn:hover {
-  background-color: rgb(28, 128, 228);
+.btn:hover,
+.btn:focus {
+  background-color: var(--jet-black);
+  border: var(--sky-blue-light) 2px solid;
+  color: var(--sky-blue-light);
 }
 
 .hamburger {
@@ -160,7 +163,7 @@ div.banner-intro {
   height: 40vh;
   font-family: "Playfair Display", serif;
   color: var(--olive-leaf);
-  font-size: 20px;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
@@ -194,11 +197,18 @@ div.travelling-svg-01 {
   position: relative;
 }
 
+div.travelling-svg-01 .heart {
+  fill: var(--powder-blush) !important;
+}
+
 button#pauseBtn {
   position: absolute;
   top: 70%;
   left: 5px;
+  color: var(--powder-blush);
 }
+
+
 
 /* For JS */
 .nav--open {
