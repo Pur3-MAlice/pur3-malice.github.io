@@ -1,0 +1,21 @@
+<form name="rsvp">
+	<!-- Specify the sheet that you want to store the submissions in -->
+	<input type="hidden" name="sheet_name" value="YOUR_SHEET_NAME" />
+	<!-- If this hidden input is not present, it defaults to 'Sheet1' -->
+
+	<input name="email" type="email" placeholder="Email" required />
+	<button type="submit">Send</button>
+</form>
+
+<script>
+	const scriptURL = 'https://script.google.com/macros/s/AKfycbxSJbrJoGoATx_2ARaUxIUvs64a-yOCwdCb4x90o2HqKF6deeXAqoXIPEr95A0_pS0b4g/exec'
+	const form = document.forms['rsvp']
+
+	form.addEventListener('submit', e => {
+		e.preventDefault()
+		fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+			.then(response => response.json())
+			.then(response => console.log('Success!', response))
+			.catch(error => console.error('Error!', error.message))
+	})
+</script>
