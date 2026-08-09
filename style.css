@@ -1,6 +1,8 @@
 /* Universal styles */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
@@ -174,18 +176,18 @@ div.banner-intro {
   cursor: default;
 }
 
-.banner-intro p {
-  margin: 0;
+.banner-intro .heading-text-one {
   text-align: center;
+  row-gap: 5px;
   order: 1;
+  width: 175px;
 }
 
-.banner-intro div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.banner-intro .heading-text-three {
+  text-align: center;
   row-gap: 5px;
   order: 3;
+  width: 175px;
 }
 
 /* Moving text svg */
