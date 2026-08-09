@@ -115,8 +115,19 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
       <script src="script.js"></script>
+      <script src="maps-config.js"></script>
       <script src="maps.js"></script>
-      <script async src="https://maps.googleapis.com/maps/api/js?key=REDACTED&loading=async&callback=initMap"></script>
+      <script>
+        window.addEventListener("load", function () {
+          const key = window.GOOGLE_MAPS_API_KEY;
+          if (key && key !== "REPLACE_WITH_YOUR_NEW_GOOGLE_MAPS_API_KEY") {
+            const script = document.createElement("script");
+            script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&loading=async&callback=initMap`;
+            script.async = true;
+            document.body.appendChild(script);
+          }
+        });
+      </script>
       
       <script>
         $(function(){$("#header").load("header.html"); });
