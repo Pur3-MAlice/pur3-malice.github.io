@@ -120,7 +120,7 @@
       <script>
         window.addEventListener("load", function () {
           const key = window.GOOGLE_MAPS_API_KEY;
-          if (key && key !== "REPLACE_WITH_YOUR_NEW_GOOGLE_MAPS_API_KEY") {
+          if (key) {
             const script = document.createElement("script");
             script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&loading=async&callback=initMap`;
             script.async = true;
