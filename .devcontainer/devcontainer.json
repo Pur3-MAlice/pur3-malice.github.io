@@ -17,6 +17,11 @@
 
   "postCreateCommand": "npm install && npm rebuild",
 
-  "forwardPorts": [5500]
-  
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": {
+      "label": "Website Preview",
+      "onAutoForward": "openPreview"
+    }
+  }
 }

@@ -2,10 +2,10 @@
   "name": "wedding-site",
   "version": "1.0.0",
   "scripts": {
-    "dev": "live-server --watch=src",
-    "build:scss": "sass src/scss/style.scss style.css --no-source-map --style=compressed",
-    "build:css": "tailwindcss -i src/tailwind/input.css -o tailwind.css --minify",
-    "build": "npm run build:css"
+    "dev": "python3 -m http.server 8080 --bind 0.0.0.0",
+    "build:scss": "sass src/scss/style.scss assets/css/style.css --no-source-map --style=compressed",
+    "build:css": "tailwindcss -i src/tailwind/input.css -o assets/css/tailwind.css --minify",
+    "build": "npm run build:scss && npm run build:css"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.0",
@@ -13,6 +13,7 @@
     "autoprefixer": "^10.4.0",
     "sass": "^1.69.0",
     "concurrently": "^8.2.2",
+    "live-server": "^1.2.0",
     "imagemin": "^8.0.1",
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-pngquant": "^9.0.0"
