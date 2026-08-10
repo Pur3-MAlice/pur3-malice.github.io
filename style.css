@@ -1,1 +1,260 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+:root {
+  --pale-oak: #e4ccaa;
+  --sand: #b4a85c;
+  --palm-leaf: #818865;
+  --olive-leaf: #38492d;
+  --golden-apricot: #e29a40;
+  --reddish-brown: #a43a36;
+  --powder-blush: #eca49c;
+  --vintage-grape: #523a55;
+  --sky-blue-light: #86c5d6;
+  --jet-black: #0a2d33;
+}
+
+body {
+  background-color: var(--palm-leaf);
+  color: var(--olive-leaf);
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Header styles*/
+
+ul.nav-list {
+  list-style: none;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+}
+
+.header {
+  width: 100%;
+  border-bottom: var(--olive-leaf) 1px solid;
+}
+
+.icon {
+  margin-right: 3px;
+  color: rgba(255, 255, 255, 0.17);
+}
+
+.bottom-bar {
+  background-color: transparent;
+}
+
+.bottom-bar-content {
+  min-height: 75px;
+  padding: 0 60px 0 75px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  vertical-align: middle;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.logo-img {
+  height: 30px;
+}
+
+.logo-text {
+  font-size: 24px;
+  color: #39492e;
+  font-weight: 500;
+  font-family: "Playfair Display", serif;
+  letter-spacing: -0.5px;
+}
+
+.nav {
+  transition: all 0.3s ease-in-out;
+  font-family: "Roboto", sans-serif;
+}
+
+.nav-list {
+  display: flex;
+  column-gap: 40px;
+}
+
+.nav-item {
+  color: #39492e;
+}
+
+.nav-link {
+  color: #39492e;
+  transition: all 0.2s;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--sky-blue-light);
+}
+
+.btn {
+  padding: 8px 20px;
+  border: var(--olive-leaf) 2px solid;
+  text-transform: uppercase;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #39492e;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--jet-black);
+  border: var(--sky-blue-light) 2px solid;
+  color: var(--sky-blue-light);
+}
+
+.hamburger {
+  cursor: pointer;
+  display: none;
+}
+
+.bar {
+  height: 2px;
+  width: 27px;
+  background-color: red;
+  margin: 5px 0;
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Main body styles */
+
+div.main-body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+}
+
+section.main-body-intro {
+  display: flex;
+  width: 100vw;
+}
+
+div.banner-intro {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  row-gap: 20px;
+  width: 100%;
+  height: 40vh;
+  font-family: "Playfair Display", serif;
+  color: var(--olive-leaf);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.banner-intro h1 {
+  font-size: 120px;
+  font-weight: 700;
+  order: 2;
+  cursor: default;
+}
+
+.banner-intro .heading-text-one {
+  text-align: center;
+  row-gap: 5px;
+  order: 1;
+  width: 175px;
+}
+
+.banner-intro .heading-text-three {
+  text-align: center;
+  row-gap: 5px;
+  order: 3;
+  width: 175px;
+}
+
+/* Moving text svg */
+div.travelling-svg-01 {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  position: relative;
+}
+
+div.travelling-svg-01 .heart {
+  fill: var(--powder-blush) !important;
+}
+
+button#pauseBtn {
+  position: absolute;
+  top: 70%;
+  left: 5px;
+  color: var(--powder-blush);
+}
+
+
+
+/* For JS */
+.nav--open {
+  left: 50% !important;
+}
+
+.hamburger--open .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger--open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger--open .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 650px) {
+  .nav {
+    top: 90px;
+    left: -100%;
+    transform: translateX(-50%);
+    background-color: currentColor;
+    width: 100%;
+    padding: 10px 0 25px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 11px;
+    padding: 7px 17px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
