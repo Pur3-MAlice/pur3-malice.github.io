@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "python3 -m http.server 8080 --bind 0.0.0.0",
-    "build:scss": "sass src/scss/style.scss assets/css/style.css --no-source-map --style=compressed",
     "build:css": "tailwindcss -i src/tailwind/input.css -o assets/css/tailwind.css --minify",
-    "build": "npm run build:scss && npm run build:css"
+    "build": "npm run build:css"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.0",
