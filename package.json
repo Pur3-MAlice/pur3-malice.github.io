@@ -5,7 +5,7 @@
     "dev": "live-server --watch=src",
     "build:scss": "sass src/scss/style.scss style.css --no-source-map --style=compressed",
     "build:css": "tailwindcss -i src/tailwind/input.css -o tailwind.css --minify",
-    "build": "npm run build:scss && npm run build:css"
+    "build": "npm run build:css"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.0",
