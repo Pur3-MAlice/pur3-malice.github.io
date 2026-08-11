@@ -14,8 +14,6 @@ tl.fromTo(".repeatText",
     { attr: { startOffset: "100%" }, duration: dur, ease: "linear" }  // move to off-screen right
 );
 
-
-
 const btn = document.getElementById("pauseBtn");
 let paused = false;
 
@@ -30,21 +28,22 @@ btn.addEventListener("click", () => {
     paused = !paused;
 });
 
+function initNavigation() {
+  const navEl = document.querySelector('.nav');
+  const hamburgerEl = document.querySelector('.hamburger');
+  const navItemEls = document.querySelectorAll('.nav-item');
 
+  hamburgerEl.addEventListener('click', () => {
+    console.log("Hamburger clicked");
 
-///nav bar
-const navEl = document.querySelector('.nav');
-const hamburgerEl = document.querySelector('.hamburger');
-const navItemEls = document.querySelectorAll('.nav-item');
-
-hamburgerEl.addEventListener('click', () => {
-  navEl.classList.toggle('nav--open');
-  hamburgerEl.classList.toggle('hamburger--open');
-});
-
-navItemEls.forEach(navItemEl => {
-  navItemEl.addEventListener('click', () => {
-    navEl.classList.remove('nav--open');
-    hamburgerEl.classList.remove('hamburger--open');
+    navEl.classList.toggle('nav--open');
+    hamburgerEl.classList.toggle('hamburger--open');
   });
-});
+
+  navItemEls.forEach(navItemEl => {
+    navItemEl.addEventListener('click', () => {
+      navEl.classList.remove('nav--open');
+      hamburgerEl.classList.remove('hamburger--open');
+    });
+  });
+}
