@@ -43,13 +43,13 @@ section {
   width: 100vw;
 }
 
-.map-description {ement.style {
+.map-description {
     margin: 0 auto;
     width: 40%;
     text-align: var( --pale-oak);
     background: #efdbbf;
     border-radius: 0px 10px 10px 0px;
-  }
+}
 
 .custom-marker {
   width: 44px;
@@ -172,4 +172,12 @@ button#pauseBtn {
   top: 70%;
   left: 5px;
   color: var(--powder-blush);
+}
+
+
+.repeat-text {
+  font-size: 60px;
+  @media (min-width: 600px) {font-size: 40px;}
+  @media (min-width: 800px) {font-size: 30px;}
+  @media (min-width: 1000px) {font-size: 20px;}
 }
