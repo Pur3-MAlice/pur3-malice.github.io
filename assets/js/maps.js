@@ -1,8 +1,9 @@
 async function initMap() {
 
 const { Map } = await google.maps.importLibrary("maps");
-const { AdvancedMarkerElement } =
-    await google.maps.importLibrary("marker");
+const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+const { InfoWindow  } = await google.maps.importLibrary("maps");
+const message = ["<h3>The Stables, Lower Byrom Street</h3>"];
 
 const map = new Map(document.getElementById("map"), {
     center: {
@@ -10,31 +11,31 @@ const map = new Map(document.getElementById("map"), {
     lng: -2.256257
     },
 
-    zoom: 16,
+    zoom: 15,
 
     mapId: "wedding-venue"
 });
 
 const markerContent = document.createElement("div");
 
+const infoWindow = new InfoWindow({
+  content: message[0]
+});
+
 markerContent.className = "custom-marker";
 
 markerContent.innerHTML = `
-    <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg">
-
-    <path
-        d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z"
-        fill="#222222"/>
-
-    <circle
-        cx="12"
-        cy="9"
-        r="2.5"
-        fill="white"/>
-
+    <svg xmlns="http://www.w3.org/2000/svg" 
+    width="24" height="24" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="#818865" 
+    stroke-width="1" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    class="feather feather-map-pin">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" fill="#818865" />
+    <circle cx="12" cy="10" r="3" fill="#38492d" />
     </svg>
 `;
 
@@ -49,8 +50,13 @@ const marker = new AdvancedMarkerElement({
 });
 
 marker.addListener("click", () => {
-    alert("YOUR VENUE INFORMATION");
+    map.setZoom(18);
+    infoWindow.open({
+        anchor: marker,
+        map
+    });
 });
+
 }
 
 window.initMap = initMap;

@@ -52,27 +52,19 @@ section {
 }
 
 .custom-marker {
-  width: 44px;
-  height: 44px;
-  background: white;
-  border: 3px solid #222;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
 
 .custom-marker svg {
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: auto;
 }
 
 .map-container {
   display: flex;
   padding: 30px;
   margin: auto 5%;
+  border-radius: 20px;
   background: repeating-linear-gradient(to right, #f6ba52, #f6ba52 30px, #ffd180 30px, #ffd180 60px);
 }
 
@@ -173,7 +165,6 @@ button#pauseBtn {
   left: 5px;
   color: var(--powder-blush);
 }
-
 
 .repeat-text {
   font-size: 60px;
