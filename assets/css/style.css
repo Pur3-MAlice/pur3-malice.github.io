@@ -42,6 +42,7 @@ section {
 
 #map-call {
   width: 100vw;
+  padding-top: 80px;
 }
 
 .map-description {
@@ -52,7 +53,6 @@ section {
       margin: 0 auto;
       width: 40%;
     }
-    
 }
 
 .custom-marker {
@@ -70,7 +70,7 @@ section {
   padding: 30px;
   margin: auto 5%;
   border-radius: 20px;
-  background: repeating-linear-gradient(to right, #f6ba52, #f6ba52 30px, #ffd180 30px, #ffd180 60px);
+  background: repeating-linear-gradient(to right, #f6ba52, #f6ba52 30px, #A89C4D 30px, #A89C4D 60px);
   @media (min-width: 800px) {
     flex-direction: row;
   }
@@ -86,6 +86,9 @@ div.main-body {
 section.main-body-intro {
   display: flex;
   width: 100vw;
+  height: calc(100vh - 80px);
+  flex-wrap: balance;
+  align-content: center;
 }
 
 div.banner-intro {
@@ -95,12 +98,13 @@ div.banner-intro {
   justify-content: center;
   row-gap: 20px;
   width: 100%;
+  max-width: 1400px;
   height: 40vh;
   font-family: "Playfair Display", serif;
   color: var(--olive-leaf);
   font-size: 1.5rem;
   font-weight: 500;
-  margin: 50px 0px;
+  margin: 50px auto;
   @media (min-width: 800px) {
     flex-direction: row;
     align-items: center;
@@ -133,7 +137,7 @@ div.banner-intro {
 /* Moving text svg */
 .travelling-section {
   padding: 0;
-  margin: 0;
+  margin: -80px 0 0 0;
 }
 
 div.travelling-svg-01 {
@@ -145,19 +149,46 @@ div.travelling-svg-01 {
 }
 
 div.travelling-svg-01 .heart {
-  fill: var(--powder-blush) !important;
+  fill: var(--sky-blue-light) !important;
 }
 
-button#pauseBtn {
+/* button#pauseBtn {
   position: absolute;
   top: 70%;
   left: 5px;
   color: var(--powder-blush);
-}
+} */
 
 .repeat-text {
-  font-size: 60px;
+  font-size: 50px;
   @media (min-width: 600px) {font-size: 40px;}
-  @media (min-width: 800px) {font-size: 30px;}
-  @media (min-width: 1000px) {font-size: 20px;}
+  @media (min-width: 800px) {font-size: 25px;}
+  @media (min-width: 1000px) {font-size: 15px;}
+}
+
+
+/* Fading Section CSS*/
+.fade-on-scroll {
+  opacity: 0;
+  transition: opacity 0.6s ease-in;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+/* Form styles */
+.form-body {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 600px;
+  background-color: var(--pale-oak);
+}
+
+.form-body-background {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 600px;
+  background: repeating-linear-gradient(to right, #86c5d6, #86c5d6 30px, #A89C4D 30px, #A89C4D 60px);
+  border-radius: 10px;
 }

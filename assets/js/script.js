@@ -14,19 +14,19 @@ tl.fromTo(".repeatText",
     { attr: { startOffset: "100%" }, duration: dur, ease: "linear" }  // move to off-screen right
 );
 
-const btn = document.getElementById("pauseBtn");
-let paused = false;
+// const btn = document.getElementById("pauseBtn");
+// let paused = false;
 
-btn.addEventListener("click", () => {
-    if (!paused) {
-        tl.pause();
-        btn.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
-    } else {
-        tl.resume();
-        btn.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
-    }
-    paused = !paused;
-});
+// btn.addEventListener("click", () => {
+//     if (!paused) {
+//         tl.pause();
+//         btn.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+//     } else {
+//         tl.resume();
+//         btn.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
+//     }
+//     paused = !paused;
+// });
 
 function initNavigation() {
   const navEl = document.querySelector('.nav');
@@ -47,3 +47,18 @@ function initNavigation() {
     });
   });
 }
+
+
+// Create an observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in');
+    }
+  });
+});
+
+// Observe all elements with a specific class
+document.querySelectorAll('.fade-on-scroll').forEach(el => {
+  observer.observe(el);
+});

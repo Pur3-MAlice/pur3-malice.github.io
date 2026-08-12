@@ -25,21 +25,29 @@
   <body>
     <header class="header" id="header"></header>
     <div class="main-body">
-      <!-- New GET test -->
-      <form id="guest-search">
-        <input id="searchFirstName" type="text" placeholder="First Name" />
-        <input id="searchLastName" type="text" placeholder="Last Name" />
-        <button type="submit">Find Invitation</button>
-      </form>
-      
-      <div id="guest-results"></div>
-      <form id="rsvp-form">
-        <input type="hidden" name="sheet_name" value="rsvp_responses">
-      </form>
-      
-    
+      <div class="form-body-background">
+        <div class="form-body">
+        <div class="form-header">
+          <h1>RSVP</h1>
+          <p>We look forward to celebrating togehter please RSVP below and share your details with us.</p>
+        </div>
+        <div class="form-search">
+          <h2>Kindly reply by July 31st, 2027</h2>
+          <form id="guest-search">
+            <input id="searchFirstName" type="text" placeholder="First Name" />
+            <input id="searchLastName" type="text" placeholder="Last Name" />
+            <button type="submit">Find Invitation</button>
+          </form>
+        </div>
+        <div id="guest-results"></div>
+        <div class="rsvp">
+          <form id="rsvp-form">
+            <input type="hidden" name="sheet_name" value="rsvp_responses">
+          </form>
+        </div>
+      </div>
     </div>
-
+  </div>
     <footer>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
@@ -50,6 +58,5 @@
       <script src="assets/js/script.js"></script>
       <script src="assets/js/form.js"></script>
     </footer>
-
   </body>
 </html>
