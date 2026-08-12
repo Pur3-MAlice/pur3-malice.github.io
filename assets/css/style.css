@@ -6,8 +6,8 @@
 }
 
 :root {
-  --pale-oak: #f0e2cf;
-  --sand: #b4a85c;
+  --pale-oak: #F5EDE0;
+  --sand: #A89C4D;
   --palm-leaf: #818865;
   --olive-leaf: #38492d;
   --golden-apricot: #e29a40;
@@ -19,7 +19,7 @@
 }
 
 body {
-  background-color: var(--palm-leaf);
+  background-color: var(--pale-oak);
   color: var(--olive-leaf);
   padding: 0;
   margin: 0;
@@ -31,12 +31,13 @@ section {
   margin: 0;
 }
 
+/* Map styles */
 #map {
   height: 400px;
   position: relative;
   overflow: hidden;
   border-radius: 10px 0px 0px 10px;
-  width: 60%;
+  @media (min-width: 800px) {width: 60%;}
 }
 
 #map-call {
@@ -44,11 +45,14 @@ section {
 }
 
 .map-description {
-    margin: 0 auto;
-    width: 40%;
     text-align: var( --pale-oak);
     background: #efdbbf;
     border-radius: 0px 10px 10px 0px;
+    @media (min-width: 800px) {
+      margin: 0 auto;
+      width: 40%;
+    }
+    
 }
 
 .custom-marker {
@@ -62,29 +66,14 @@ section {
 
 .map-container {
   display: flex;
+  flex-direction: column;
   padding: 30px;
   margin: auto 5%;
   border-radius: 20px;
   background: repeating-linear-gradient(to right, #f6ba52, #f6ba52 30px, #ffd180 30px, #ffd180 60px);
-}
-
-/* Header styles*/
-
-ul.nav-list {
-  list-style: none;
-  font-size: 20px;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-button {
-  background: none;
-  border: none;
-  font: inherit;
-  color: inherit;
+  @media (min-width: 800px) {
+    flex-direction: row;
+  }
 }
 
 /* Main body styles */
@@ -121,10 +110,10 @@ div.banner-intro {
 
 .banner-intro h1 {
   font-size: 80px;
-  @media (min-width: 800px) {font-size: 120px;}
   font-weight: 700;
   order: 2;
   cursor: default;
+  @media (min-width: 800px) {font-size: 120px;}
 }
 
 .banner-intro .heading-text-one {

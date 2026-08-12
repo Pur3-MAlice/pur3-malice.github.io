@@ -37,6 +37,23 @@
   letter-spacing: -0.5px;
 }
 
+ul.nav-list {
+  list-style: none;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+}
+
 /* burger styles */
 .hamburger {
   cursor: pointer;
@@ -93,21 +110,18 @@
     align-items: center;
     row-gap: 20px;
     display: flex;
-    column-gap: 40px;
+    column-gap: 10px;
     @media (min-width: 800px) {
         flex-direction: row;
+        column-gap: 40px;
     }
-}
 
-.nav-item {
-    color: white;
-    /* @media (min-width: 800px) {color: #39492e;} */
 }
 
 .nav-link {
-    color: white;
+    color: var(--pale-oak);
     font-size: 14px;
-    /* @media (min-width: 800px) {color: #39492e;} */
+    @media (min-width: 800px) {color: var(--olive-leaf);} 
 }
 
 .nav-link:hover,
@@ -118,13 +132,15 @@
 .nav-item .btn {
     font-size: 11px;
     padding: 7px 17px;
-    border: white 2px solid;
+    border: var(--pale-oak) 2px solid;
     text-transform: uppercase;
     cursor: pointer;
-    color: white;
+    color: var(--pale-oak);
     @media (min-width: 800px) {
         padding: 8px 20px;
         font-size: 20px;
+        color: var(--olive-leaf);
+        border: var(--olive-leaf) 2px solid;
     }
 }
 
