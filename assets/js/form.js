@@ -17,20 +17,20 @@ rsvpForm.addEventListener("submit", async e => {
         lastName: currentGroup[i][2],
 
         attendance: document.querySelector(
-        `[name="guest_${i}_attendance"]`
-        ).value,
+        `[name="guest_${i}_attendance"]:checked`
+        )?.value,
 
         starter: document.querySelector(
-        `[name="guest_${i}_starter"]`
-        ).value,
+        `[name="guest_${i}_starter"]:checked`
+        )?.value || "",
 
         main: document.querySelector(
-        `[name="guest_${i}_main"]`
-        ).value,
+        `[name="guest_${i}_main"]:checked`
+        )?.value || "",
 
         dessert: document.querySelector(
-        `[name="guest_${i}_dessert"]`
-        ).value,
+        `[name="guest_${i}_dessert"]:checked`
+        )?.value || "",
 
         dietary: document.querySelector(
         `[name="guest_${i}_dietary"]`
@@ -70,36 +70,54 @@ searchForm.addEventListener("submit", async e => {
     wrapper.innerHTML = `
         <h3>${guest[1]} ${guest[2]}</h3>
     
-        <label>Attendance</label>
-        <select required name="guest_${index}_attendance">
-        <option value="">Select attendance</option>
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-        </select>
+        <div class="radio-options attendance">
+            <label class="radio-box">
+                <input type="radio" name="guest_${index}_attendance" value="yes">
+                <span>Yes, I'll be there</span>
+            </label>
+            <label class="radio-box">
+                <input type="radio" name="guest_${index}_attendance" value="no">
+                <span>Sorry, I can't make it</span>
+            </label>
+        </div>
+
+        
 
         <div class="meal-options" style="display:none">
 
-        <label>Starter</label>
-        <select required name="guest_${index}_starter">
-        <option value="">Select starter</option>
-        <option value="starter_1">Starter 1</option>
-        <option value="starter_2">Starter 2</option>
-        </select>
+        <div class="radio-options starter">
+            <label class="radio-box">
+                <input type="radio" name="guest_${index}_starter" value="starter_1">
+                <span>YStarter</span>
+            </label>
+            <label class="radio-box">
+                <input type="radio" name="guest_${index}_starter" value="starter_2">
+                <span>Starter 2</span>
+            </label>
+        </div>
 
-        <label>Main</label>
-        <select required name="guest_${index}_main">
-        <option value="">Select main</option>
-        <option value="main_1">Main 1</option>
-        <option value="main_2">Main 2</option>
-        </select>
 
-        <label>Dessert</label>
-        <select required name="guest_${index}_dessert">
-        <option value="">Select dessert</option>
-        <option value="dessert_1">Dessert 1</option>
-        <option value="dessert_2">Dessert 2</option>
-        </select>
+        <div class="radio-options main">
+            <label class="radio-box">
+                <input type="radio" name="guest_${index}_main" value="main_1">
+                <span>YMain</span>
+            </label>
+            <label class="radio-box">
+                <input type="radio" name="guest_${index}_main" value="main_2">
+                <span>Main 2</span>
+            </label>
+        </div>
 
+        <div class="radio-options dessert">
+            <label class="radio-box">
+                <input type="radio" name="guest_${index}_dessert" value="dessert_1">
+                <span>Dessert 1</span>
+            </label>
+            <label class="radio-box">
+                <input type="radio" name="guest_${index}_dessert" value="dessert_2">
+                <span>Dessert 2</span>
+            </label>
+        </div>
         <input
         type="text"
         name="guest_${index}_dietary"
@@ -127,6 +145,8 @@ searchForm.addEventListener("submit", async e => {
     )
 
     attendanceSelect.addEventListener("change", () => {
+        
+        console.log(attendanceSelect)
 
         if (attendanceSelect.value === "yes") {
 
