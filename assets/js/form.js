@@ -87,35 +87,47 @@ searchForm.addEventListener("submit", async e => {
 
         <div class="radio-options starter">
             <label class="radio-box">
-                <input type="radio" name="guest_${index}_starter" value="starter_1">
-                <span>YStarter</span>
+                <input type="radio" name="guest_${index}_starter" value="salmon">
+                <span>Salmon ceviche, dill creme fraiche, szechuan chilli oi, toasted sourdough</span>
             </label>
             <label class="radio-box">
-                <input type="radio" name="guest_${index}_starter" value="starter_2">
-                <span>Starter 2</span>
+                <input type="radio" name="guest_${index}_starter" value="aubergine">
+                <span>Grilled aubergine, curried yogurt, pickled raisins, toasted pine nuts, crispy sage (ve, gf)</span>
+            </label>
+            <label class="radio-box">
+                <input type="radio" name="guest_${index}_starter" value="pork">
+                <span>Stick-miso pork belly skewers, soy and ginger dressed fennel and cabbage salad (gf)</span>
             </label>
         </div>
 
 
         <div class="radio-options main">
             <label class="radio-box">
-                <input type="radio" name="guest_${index}_main" value="main_1">
-                <span>YMain</span>
+                <input type="radio" name="guest_${index}_main" value="chicken">
+                <span>Roasted chicken supreme, grilled corn, harissa and brown butter (gf)</span>
             </label>
             <label class="radio-box">
-                <input type="radio" name="guest_${index}_main" value="main_2">
-                <span>Main 2</span>
+                <input type="radio" name="guest_${index}_main" value="beef">
+                <span>Daube of beef, slow cooked in a red wine sauce, roasted carrots, chive (gf)</span>
+            </label>
+            <label class="radio-box">
+                <input type="radio" name="guest_${index}_main" value="celeriac">
+                <span>Celeriac 'steak', pickled celery, miso glaze (ve, gf)</span>
             </label>
         </div>
 
         <div class="radio-options dessert">
             <label class="radio-box">
-                <input type="radio" name="guest_${index}_dessert" value="dessert_1">
-                <span>Dessert 1</span>
+                <input type="radio" name="guest_${index}_dessert" value="cheesecake">
+                <span>Strawberry cheesecake, cherry and cardamom compote (v)</span>
             </label>
             <label class="radio-box">
-                <input type="radio" name="guest_${index}_dessert" value="dessert_2">
-                <span>Dessert 2</span>
+                <input type="radio" name="guest_${index}_dessert" value="brownie">
+                <span>Chocolate brownie, butterscotch and chocolate mascarpone (ve)</span>
+            </label>
+            <label class="radio-box">
+                <input type="radio" name="guest_${index}_dessert" value="toffeepudding">
+                <span>Sticky toffee pudding, roasted pineapple, toffee sauce (v)</span>
             </label>
         </div>
         <input
