@@ -7,22 +7,22 @@
 
 @font-face {
   font-family: "Bakersfield Sans";
-  src: url("/fonts/bakersfield-sans.woff2") format("woff2");
+  src: url("/assets/fonts/bakersfield-sans.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Bakersfield Script Oblique";
-  src: url("/fonts/bakersfield-script-oblique.woff2") format("woff2");
+  src: url("/assets/fonts/bakersfield-script-oblique.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Bakersfield Script";
-  src: url("/fonts/bakersfield-script.woff2") format("woff2");
+  src: url("/assets/fonts/bakersfield-script.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Bakersfield Serif";
-  src: url("/fonts/bakersfieldserif.woff2") format("woff2");
+  src: url("/assets/fonts/bakersfieldserif.woff2") format("woff2");
 }
 
 :root {
