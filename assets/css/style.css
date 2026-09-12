@@ -5,6 +5,26 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: "Bakersfield Sans";
+  src: url("/fonts/bakersfield-sans.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Bakersfield Script Oblique";
+  src: url("/fonts/bakersfield-script-oblique.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Bakersfield Script";
+  src: url("/fonts/bakersfield-script.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Bakersfield Serif";
+  src: url("/fonts/bakersfieldserif.woff2") format("woff2");
+}
+
 :root {
   --pale-oak: #F5EDE0;
   --sand: #A89C4D;
@@ -100,7 +120,7 @@ div.banner-intro {
   width: 100%;
   max-width: 1400px;
   height: 40vh;
-  font-family: "Playfair Display", serif;
+  font-family: "Bakersfield Sans", sans-serif;
   color: var(--olive-leaf);
   font-size: 1.5rem;
   font-weight: 500;
