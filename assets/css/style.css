@@ -132,7 +132,7 @@ div.banner-intro {
   }
 }
 
-.banner-intro h1 {
+.banner-intro .ja-logo {
   font-size: 80px;
   font-weight: 700;
   order: 2;
