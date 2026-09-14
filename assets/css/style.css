@@ -215,8 +215,8 @@ div.travelling-svg-01 .heart {
   padding: 20px;
   margin: 0 auto;
   max-width: 600px;
-  background: repeating-linear-gradient(to right, #86c5d6, #86c5d6 30px, #A89C4D 30px, #A89C4D 60px);
-  border-radius: 10px;
+  /* background: url(/assets/svgs/Frame-186.svg) center no-repeat;
+  height: 100%; */
 }
 
 .form-group {
