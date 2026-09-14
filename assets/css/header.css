@@ -1,7 +1,7 @@
 .header {
   width: 100%;
   background: var(--olive-leaf);
-  @media (min-width: 800px) {
+  @media (min-width: 900px) {
     border-bottom: var(--sand) 5px solid;
   }
 }
@@ -17,7 +17,7 @@
     background: var(--olive-leaf);
     position: relative;
     border-bottom: 5px var(--sand) solid;
-    @media (min-width: 800px) {
+    @media (min-width: 900px) {
         background: none;
         padding: 0px;
         margin: 0;
@@ -26,25 +26,26 @@
 }
 
 .bottom-bar-content {
-    @media (min-width: 800px) {
+    @media (min-width: 900px) {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin: 0px 30px;
+    }
+      @media (min-width: 1100px) {
         margin: 0px 50px;
     }
 }
 
 .logo-text {
-  font-size: 24px;
+  font-size: 2.5rem;
   color: var(--pale-oak);
-  font-weight: 500;
-  font-family: "Bakersfield Sans", sans-serif;
-  letter-spacing: -0.5px;
+  font-family: "Bakersfield Script Oblique", serif;
 }
 
 ul.nav-list {
   list-style: none;
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 a {
@@ -63,7 +64,7 @@ button {
 .hamburger {
   cursor: pointer;
   display: block;
-  @media (min-width: 800px) {display: none;}
+  @media (min-width: 900px) {display: none;}
 }
 
 .bar {
@@ -90,16 +91,16 @@ button {
 /* Nav styles */
 .nav {
     transition: all 0.3s ease-in-out;
-    font-family: "Roboto", sans-serif;
+    font-family: "Bakersfield Sans", sans-serif;
     top: -175px;
     left: 0;
     transform: translateY(0%);
     background-color: var(--olive-leaf);
     width: 100%;
-    padding: 10px 0 25px;
+    padding: 15px 0 25px;
     position: absolute;
     z-index: 5;
-    @media (min-width: 800px) {
+    @media (min-width: 900px) {
         position: static;
         padding: 0px;
         background-color: transparent;
@@ -116,16 +117,19 @@ button {
     row-gap: 20px;
     display: flex;
     column-gap: 10px;
-    @media (min-width: 800px) {
+    @media (min-width: 900px) {
+        flex-direction: row;
+        column-gap: 20px;
+    }
+    @media (min-width: 1100px) {
         flex-direction: row;
         column-gap: 40px;
     }
-
 }
 
 .nav-link {
     color: var(--pale-oak);
-    font-size: 20px;
+    font-size: 2rem;
 }
 
 .nav-link:hover,
@@ -134,15 +138,15 @@ button {
 }
 
 .nav-item .btn {
-    font-size: 11px;
+    font-size: 2rem;
     padding: 7px 17px;
     border: var(--pale-oak) 2px solid;
     text-transform: uppercase;
     cursor: pointer;
     color: var(--pale-oak);
-    @media (min-width: 800px) {
+    @media (min-width: 900px) {
         padding: 8px 20px;
-        font-size: 20px;
+        font-size: 2rem;
     }
 }
 
