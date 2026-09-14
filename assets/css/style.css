@@ -204,19 +204,62 @@ div.travelling-svg-01 .heart {
 }
 
 /* Form styles */
-.form-body {
-  padding: 20px;
-  margin: 0 auto;
-  max-width: 600px;
-  background-color: var(--pale-oak);
-}
-
 .form-body-background {
   padding: 20px;
   margin: 0 auto;
   max-width: 600px;
-  /* background: url(/assets/svgs/Frame-186.svg) center no-repeat;
-  height: 100%; */
+  background: url(../svgs/Frame-186.svg) center no-repeat;
+  height: 100%;
+}
+
+.form-body {
+  margin: 0 auto;
+  /* color: var(--falu-red); */
+  /* width: 55%; */
+}
+
+.form-body .form-header h1 {
+  font-family: "Bakersfield Serif", serif;
+  font-size: 7em;
+  text-align: center;
+  font-weight: 400;
+  margin: .5em auto 0;
+}
+
+.form-body .form-header p {
+  font-family: "Bakersfield Sans", serif;
+  font-size: 2em;
+  text-align: center;
+  font-weight: 400;
+  margin: .5em auto;
+  max-width: 400px;
+}
+
+.form-body .form-search {
+  margin: .5em auto 0;
+  max-width: 400px;
+}
+
+.form-body .form-search h2 {
+  font-family: "Bakersfield Script Oblique", sans-serif;
+  font-size: 2em;
+  text-align: center;
+  font-weight: 400;
+}
+
+.form-body .form-search #guest-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-body .form-search #guest-search input{
+  width: 80%;
+  padding: 12px;
+  margin: 5px 0;
+  box-sizing: border-box;
+
 }
 
 .form-group {
@@ -282,4 +325,27 @@ div.travelling-svg-01 .heart {
 .radio-box input:focus-visible + span {
   outline: 2px solid #555;
   outline-offset: 3px;
+}
+
+
+/* TEST CSS */
+
+.form-frame {
+    position: relative;
+    width: 600px;
+}
+
+.frame-top {
+    height: 120px;
+    background: url("top.svg") center top / 100% 100% no-repeat;
+}
+
+.frame-middle {
+    background: url("middle.svg") center / 100% 100% no-repeat;
+    padding: 20px 60px;
+}
+
+.frame-bottom {
+    height: 120px;
+    background: url("bottom.svg") center bottom / 100% 100% no-repeat;
 }
