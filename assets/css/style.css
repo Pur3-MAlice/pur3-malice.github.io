@@ -31,6 +31,8 @@
   --sand: #8F9458;
   --palm-leaf: #4B5B33;
   --olive-leaf: #0C402B;
+  --cinderlla: #FAD0CA;
+  --sea-pink: #ED909B;
   --falu-red: #7D1717;
   --sky-blue-light: #7091BA;
   --navy-dark-blue: #213d63;
@@ -205,17 +207,25 @@ div.travelling-svg-01 .heart {
 
 /* Form styles */
 .form-body-background {
-  padding: 20px;
   margin: 0 auto;
   max-width: 600px;
-  background: url(../svgs/Frame-186.svg) center no-repeat;
-  height: 100%;
+}
+
+.form-body-background .svg-div {
+  width: 100%;
+}
+
+.form-body-background .svg-div #frame {
+  position: absolute;
+  max-width: 600px;
+  margin-top: -60px;
+  z-index:-10;
+  width: 100%;
+  height: auto;
 }
 
 .form-body {
   margin: 0 auto;
-  /* color: var(--falu-red); */
-  /* width: 55%; */
 }
 
 .form-body .form-header h1 {
@@ -228,7 +238,7 @@ div.travelling-svg-01 .heart {
 
 .form-body .form-header p {
   font-family: "Bakersfield Sans", serif;
-  font-size: 2em;
+  font-size: 2rem;
   text-align: center;
   font-weight: 400;
   margin: .5em auto;
@@ -247,6 +257,14 @@ div.travelling-svg-01 .heart {
   font-weight: 400;
 }
 
+.form-body .rsvp p {
+  font-family: "Bakersfield Sans", serif;
+  font-size: 1.7rem;
+  line-height: 1;
+  text-align: center;
+  margin: 0 auto;
+}
+
 .form-body .form-search #guest-search {
   display: flex;
   align-items: center;
@@ -259,7 +277,6 @@ div.travelling-svg-01 .heart {
   padding: 12px;
   margin: 5px 0;
   box-sizing: border-box;
-
 }
 
 .form-group {
@@ -278,12 +295,37 @@ div.travelling-svg-01 .heart {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin: 10px 0px;
 }
 
 .radio-box {
   position: relative;
   display: block;
   cursor: pointer;
+}
+
+#rsvp-form {
+  width: 90%;
+  margin: 0 auto;
+}
+.form-frame {
+  position: relative;
+  width: 600px;
+}
+
+.frame-top {
+  height: 120px;
+  background: url("top.svg") center top / 100% 100% no-repeat;
+}
+
+.frame-middle {
+  background: url("middle.svg") center / 100% 100% no-repeat;
+  padding: 20px 60px;
+}
+
+.frame-bottom {
+  height: 120px;
+  background: url("bottom.svg") center bottom / 100% 100% no-repeat;
 }
 
 /* Hide the native radio circle */
@@ -298,7 +340,7 @@ div.travelling-svg-01 .heart {
   display: block;
   width: 100%;
   box-sizing: border-box;
-  padding: 17px 20px;
+  padding: 10px 0px;
   border-radius: 4px;
   background: var(--wafer);
   color: #222;
@@ -309,43 +351,79 @@ div.travelling-svg-01 .heart {
 
 /* Selected option */
 .radio-box input:checked + span {
-  background: var(--wafer);
+  background: var(--sea-pink);
 }
 
 /* Mouse/keyboard interaction */
-.radio-box:hover span {
-  background: var(--wafer);
+.radio-box:hover span:not(:checked) {
+  background: var(--cinderlla);
 }
 
 .radio-box input:checked + span:hover {
-  background: var(--wafer);
+  background: var(--sea-pink);
+}
+
+/* LOADING OVERLAY */
+
+.loading-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+.loading-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.loading-logo {
+    width: 80px;
+    height: 80px;
+
+    animation: loading-spin 1.5s linear infinite;
+}
+
+.loading-content p {
+    margin-top: 24px;
+
+    color: white;
+    font-size: 1rem;
+}
+
+@keyframes loading-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Keyboard accessibility */
 .radio-box input:focus-visible + span {
   outline: 2px solid #555;
   outline-offset: 3px;
-}
-
-
-/* TEST CSS */
-
-.form-frame {
-    position: relative;
-    width: 600px;
-}
-
-.frame-top {
-    height: 120px;
-    background: url("top.svg") center top / 100% 100% no-repeat;
-}
-
-.frame-middle {
-    background: url("middle.svg") center / 100% 100% no-repeat;
-    padding: 20px 60px;
-}
-
-.frame-bottom {
-    height: 120px;
-    background: url("bottom.svg") center bottom / 100% 100% no-repeat;
 }
