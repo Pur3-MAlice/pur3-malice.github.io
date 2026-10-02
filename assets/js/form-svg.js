@@ -9,7 +9,7 @@ const SVG_WIDTH = 1807.18;
 
 // Controls how much the middle stretches.
 // Lower = less stretching.
-const STRETCH_FACTOR = 0.90;
+const STRETCH_FACTOR = 0.75;
 
 function resizeFrame() {
 

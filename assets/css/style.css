@@ -305,6 +305,20 @@ div.travelling-svg-01 .heart {
   transition: background 0.15s ease;
 }
 
+.form-body .meal-choice select {
+  display: block;
+  width: 90%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: var(--cinderella) 3px solid;
+  border-radius: 4px;
+  background: var(--pale-oak);
+  color: #222;
+  font-family: 'Bakersfield Sans';
+  font-size: 1.2em;
+  line-height: 1.3;
+}
+
 .form-body .form-search button{
   font-family: 'Bakersfield Sans';
   width: 90%;
@@ -314,6 +328,21 @@ div.travelling-svg-01 .heart {
   border: var(--falu-red) solid 2px;
   border-radius: 2px;
   color: var(--pale-oak);
+}
+
+.form-body .rsvp #rsvp-form .meal-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-body .rsvp #rsvp-form .meal-choice {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.form-body .rsvp #rsvp-form .meal-choice.starter {
+  margin: 0px;
 }
 
 .form-body .rsvp #rsvp-form button{
@@ -344,6 +373,7 @@ div.travelling-svg-01 .heart {
   padding: 5px 0px 0px 5px;
   margin-bottom: -10px;
   color: var(--navy-dark-blue);
+  width: 20%;
 }
 
 .form-body .rsvp #rsvp-form .rsvp-error h3{
@@ -355,6 +385,7 @@ div.travelling-svg-01 .heart {
   padding: 15px;
   color: var(--navy-dark-blue);
 }
+
 .form-group {
   border: 0;
   padding: 0;

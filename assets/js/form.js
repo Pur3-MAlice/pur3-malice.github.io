@@ -38,6 +38,9 @@ function initNavigation() {
 
 rsvpForm.addEventListener("submit", async e => {
     e.preventDefault()
+    if (!currentGroup.length || !rsvpForm.reportValidity()) {
+        return
+    }
     showLoading("Submitting your RSVP...")
 
     for (let i = 0; i < currentGroup.length; i++) {
@@ -51,16 +54,16 @@ rsvpForm.addEventListener("submit", async e => {
                 `[name="guest_${i}_attendance"]:checked`
             )?.value,
 
-            starter: document.querySelector(
-                `[name="guest_${i}_starter"]:checked`
+            starter: rsvpForm.querySelector(
+                `[name="guest_${i}_starter"]`
             )?.value || "",
 
-            main: document.querySelector(
-                `[name="guest_${i}_main"]:checked`
+            main: rsvpForm.querySelector(
+                `[name="guest_${i}_main"]`
             )?.value || "",
 
-            dessert: document.querySelector(
-                `[name="guest_${i}_dessert"]:checked`
+            dessert: rsvpForm.querySelector(
+                `[name="guest_${i}_dessert"]`
             )?.value || "",
 
             dietary: document.querySelector(
@@ -81,10 +84,17 @@ rsvpForm.addEventListener("submit", async e => {
 
 searchForm.addEventListener("submit", async e => {
     e.preventDefault()
+    const firstNameInput = document.getElementById("searchFirstName")
+    const lastNameInput = document.getElementById("searchLastName")
+    firstNameInput.value = firstNameInput.value.trim()
+    lastNameInput.value = lastNameInput.value.trim()
+    if (!searchForm.reportValidity()) {
+        return
+    }
     showLoading("Checking the guest list...")
 
-    const firstName = document.getElementById("searchFirstName").value
-    const lastName = document.getElementById("searchLastName").value
+    const firstName = firstNameInput.value
+    const lastName = lastNameInput.value
     // const response = await fetch(
     //     `${scriptURL}?first_name=${firstName}&last_name=${lastName}`
     // )
@@ -119,70 +129,44 @@ searchForm.addEventListener("submit", async e => {
             <h3>${guest[1]}</h3>
             <div class="radio-options attendance">
                 <label class="radio-box">
-                    <input type="radio" name="guest_${index}_attendance" value="yes">
+                    <input type="radio" name="guest_${index}_attendance" value="yes" required>
                     <span><p>Yes, I'll be there</p></span>
                 </label>
                 <label class="radio-box">
-                    <input type="radio" name="guest_${index}_attendance" value="no">
+                    <input type="radio" name="guest_${index}_attendance" value="no" required>
                     <span><p>Sorry, I can't make it</p></span>
                 </label>
             </div>
 
             <div class="meal-options" style="display:none">
-                <div class="radio-options starter">
+                <div class="meal-choice starter">
                     <h4>Starter</h4>
-                    <label class="radio-box">
-                        <input type="radio" name="guest_${index}_starter" value="salmon">
-                        <span><p>Salmon ceviche, dill creme fraiche, szechuan chilli oi, toasted sourdough</p></span>
-                    </label>
-
-                    <label class="radio-box">
-                        <input type="radio" name="guest_${index}_starter" value="aubergine">
-                        <span><p>Grilled aubergine, curried yogurt, pickled raisins, toasted pine nuts, crispy sage (ve, gf)</p></span>
-                    </label>
-
-                    <label class="radio-box">
-                        <input type="radio" name="guest_${index}_starter" value="pork">
-                        <span><p>Stick-miso pork belly skewers, soy and ginger dressed fennel and cabbage salad (gf)</p></span>
-                    </label>
+                    <select name="guest_${index}_starter" aria-label="Starter">
+                        <option value="" disabled selected>Select a starter</option>
+                        <option value="salmon">Salmon ceviche, dill creme fraiche, szechuan chilli oi, toasted sourdough</option>
+                        <option value="aubergine">Grilled aubergine, curried yogurt, pickled raisins, toasted pine nuts, crispy sage (ve, gf)</option>
+                        <option value="pork">Stick-miso pork belly skewers, soy and ginger dressed fennel and cabbage salad (gf)</option>
+                    </select>
                 </div>
 
-                <div class="radio-options main">
+                <div class="meal-choice main-course">
                     <h4>Main Course</h4>
-
-                    <label class="radio-box">
-                        <input type="radio" name="guest_${index}_main" value="chicken">
-                        <span><p>Roasted chicken supreme, grilled corn, harissa and brown butter (gf)</p></span>
-                    </label>
-
-                    <label class="radio-box">
-                        <input type="radio" name="guest_${index}_main" value="beef">
-                        <span><p>Daube of beef, slow cooked in a red wine sauce, roasted carrots, chive (gf)</p></span>
-                    </label>
-
-                    <label class="radio-box">
-                        <input type="radio" name="guest_${index}_main" value="celeriac">
-                        <span><p>Celeriac 'steak', pickled celery, miso glaze (ve, gf)</p></span>
-                    </label>
+                    <select name="guest_${index}_main" aria-label="Main course">
+                        <option value="" disabled selected>Select a main course</option>
+                        <option value="chicken">Roasted chicken supreme, grilled corn, harissa and brown butter (gf)</option>
+                        <option value="beef">Daube of beef, slow cooked in a red wine sauce, roasted carrots, chive (gf)</option>
+                        <option value="celeriac">Celeriac 'steak', pickled celery, miso glaze (ve, gf)</option>
+                    </select>
                 </div>
 
-                <div class="radio-options dessert">
+                <div class="meal-choice dessert">
                     <h4>Dessert</h4>
-
-                    <label class="radio-box">
-                        <input type="radio" name="guest_${index}_dessert" value="cheesecake">
-                        <span><p>Strawberry cheesecake, cherry and cardamom compote (v)</p></span>
-                    </label>
-
-                    <label class="radio-box">
-                        <input type="radio" name="guest_${index}_dessert" value="brownie">
-                        <span><p>Chocolate brownie, butterscotch and chocolate mascarpone (ve)</p></span>
-                    </label>
-
-                    <label class="radio-box">
-                        <input type="radio" name="guest_${index}_dessert" value="toffeepudding">
-                        <span><p>Sticky toffee pudding, roasted pineapple, toffee sauce (v)</p></span>
-                    </label>
+                    <select name="guest_${index}_dessert" aria-label="Dessert">
+                        <option value="" disabled selected>Select a dessert</option>
+                        <option value="cheesecake">Strawberry cheesecake, cherry and cardamom compote (v)</option>
+                        <option value="brownie">Chocolate brownie, butterscotch and chocolate mascarpone (ve)</option>
+                        <option value="toffeepudding">Sticky toffee pudding, roasted pineapple, toffee sauce (v)</option>
+                    </select>
                 </div>
                 <span class="text-input"><input type="text" name="guest_${index}_dietary" placeholder="Let us know about any dietary requirements (optional)"></span>
             </div>
@@ -190,7 +174,7 @@ searchForm.addEventListener("submit", async e => {
         rsvpForm.appendChild(wrapper)
 
         const mealSection = wrapper.querySelector(".meal-options")
-        const mealOptions = wrapper.querySelectorAll(`.meal-options input[type="radio"]`)
+        const mealSelects = wrapper.querySelectorAll(".meal-options select")
         wrapper.addEventListener("change", e => {
             if (
                 !e.target.matches(
@@ -205,10 +189,10 @@ searchForm.addEventListener("submit", async e => {
                 ? "block"
                 : "none"
 
-            mealOptions.forEach(option => {
-                option.required = attending
+            mealSelects.forEach(select => {
+                select.required = attending
                 if (!attending) {
-                    option.checked = false
+                    select.value = ""
                 }
             })
         })
@@ -225,7 +209,7 @@ searchForm.addEventListener("submit", async e => {
     console.error("RSVP lookup failed:", error)
     hideLoading()
     results.innerHTML = ""
-    rsvpForm.innerHTML = `<div class="rsvp-error"><h3>We couldn't find your RSVP information. <br>Check your details and try again.</h3>`
+    rsvpForm.innerHTML = `<div class="rsvp-error"><h3>We couldn't find your RSVP information. <br>Check your details and try again.</h3></div>`
 
 } finally {
 
