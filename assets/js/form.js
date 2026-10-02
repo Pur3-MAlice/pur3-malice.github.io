@@ -150,7 +150,7 @@ searchForm.addEventListener("submit", async e => {
                 </div>
 
                 <div class="meal-choice main-course">
-                    <h4>Main Course</h4>
+                    <h4>Main</h4>
                     <select name="guest_${index}_main" aria-label="Main course">
                         <option value="" disabled selected>Select a main course</option>
                         <option value="chicken">Roasted chicken supreme, grilled corn, harissa and brown butter (gf)</option>
