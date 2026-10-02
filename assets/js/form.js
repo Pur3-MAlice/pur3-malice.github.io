@@ -85,16 +85,34 @@ searchForm.addEventListener("submit", async e => {
 
     const firstName = document.getElementById("searchFirstName").value
     const lastName = document.getElementById("searchLastName").value
-    const response = await fetch(
-        `${scriptURL}?first_name=${firstName}&last_name=${lastName}`
-    )
-    const group = await response.json()
-    console.log("Guest group found:", group)
-    
+    // const response = await fetch(
+    //     `${scriptURL}?first_name=${firstName}&last_name=${lastName}`
+    // )
+    try {
+        const response = await fetch(
+            `${scriptURL}?first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}`
+        )
+        if (!response.ok) {
+            throw new Error(`Request failed: ${response.status}`)
+        }
+        const group = await response.json()
+        console.log("Guest group found:", group)
+
+    // Start your validation here
+    if (!Array.isArray(group)) {
+        throw new Error("Invalid RSVP response")
+    }
+
+    if (group.length === 0) {
+        throw new Error("No RSVP found")
+    }
+
+    // More validation goes here...
+
     currentGroup = group
+
     results.innerHTML = ""
     rsvpForm.innerHTML = `<input type="hidden" name="sheet_name" value="rsvp_responses">`
-
     group.forEach((guest, index) => {
         const wrapper = document.createElement("div")
         wrapper.innerHTML = `
@@ -166,7 +184,7 @@ searchForm.addEventListener("submit", async e => {
                         <span><p>Sticky toffee pudding, roasted pineapple, toffee sauce (v)</p></span>
                     </label>
                 </div>
-                <input type="text" name="guest_${index}_dietary" placeholder="Dietary requirements (optional)">
+                <span class="text-input"><input type="text" name="guest_${index}_dietary" placeholder="Let us know about any dietary requirements (optional)"></span>
             </div>
         `
         rsvpForm.appendChild(wrapper)
@@ -201,5 +219,17 @@ searchForm.addEventListener("submit", async e => {
     submitButton.textContent = "Submit RSVP"
 
     rsvpForm.appendChild(submitButton)
+
+} catch (error) {
+
+    console.error("RSVP lookup failed:", error)
     hideLoading()
+    results.innerHTML = ""
+    rsvpForm.innerHTML = `<div class="rsvp-error"><h3>We couldn't find your RSVP information. <br>Check your details and try again.</h3>`
+
+} finally {
+
+    hideLoading()
+
+}
 })
