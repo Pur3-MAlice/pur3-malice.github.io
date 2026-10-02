@@ -31,7 +31,7 @@
   --sand: #8F9458;
   --palm-leaf: #4B5B33;
   --olive-leaf: #0C402B;
-  --cinderlla: #FAD0CA;
+  --cinderella: #FAD0CA;
   --sea-pink: #ED909B;
   --falu-red: #7D1717;
   --sky-blue-light: #7091BA;
@@ -226,6 +226,9 @@ div.travelling-svg-01 .heart {
 
 .form-body {
   margin: 0 auto;
+  width: 90%;
+  @media (min-width: 400px) {width: 100%;}
+
 }
 
 .form-body .form-header h1 {
@@ -273,10 +276,45 @@ div.travelling-svg-01 .heart {
 }
 
 .form-body .form-search #guest-search input{
-  width: 80%;
+  width: 90%;
   padding: 12px;
   margin: 5px 0;
   box-sizing: border-box;
+  font-family: 'Bakersfield Sans';
+  font-size: 1.75em;
+  background: var(--wafer);
+  border: var(--sea-pink) solid 2px;
+  border-radius: 2px;
+}
+
+.form-body .form-search button{
+      font-family: 'Bakersfield Sans';
+    width: 90%;
+    font-size: 2.5em;
+    padding: 8px 20px;
+    background: var(--falu-red);
+    border: var(--falu-red) solid 2px;
+    border-radius: 2px;
+    color: var(--pale-oak);
+}
+
+.form-body .rsvp #rsvp-form button{
+    font-family: 'Bakersfield Sans';
+    width: 100%;
+    font-size: 2.5em;
+    padding: 8px 20px;
+    background: var(--falu-red);
+    border: var(--falu-red) solid 2px;
+    border-radius: 2px;
+    color: var(--pale-oak);
+}
+
+.form-body .rsvp #rsvp-form h3{
+    font-family: 'Bakersfield Script Oblique';
+    font-size: 2em;
+    font-weight: 100;
+    padding: 5px 0px 0px 5px;
+    margin-bottom: -5px;
 }
 
 .form-group {
@@ -399,17 +437,17 @@ div.travelling-svg-01 .heart {
 }
 
 .loading-logo {
-    width: 80px;
-    height: 80px;
+    width: 200px;
+    height: 200px;
 
     animation: loading-spin 1.5s linear infinite;
 }
 
 .loading-content p {
     margin-top: 24px;
-
-    color: white;
-    font-size: 1rem;
+    font-family: "Bakersfield Sans", sans-serif;
+    color: var(--pale-oak);
+    font-size: 6rem;
 }
 
 @keyframes loading-spin {
